@@ -1,8 +1,17 @@
 {
+  "name": "lodwal-constructions",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "ejs": "^5.0.1",
     "ejs-mate": "^4.0.0",
     "express": "^5.2.1",
     "path": "^0.12.7"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
