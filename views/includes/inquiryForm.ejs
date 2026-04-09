@@ -1,0 +1,68 @@
+<section id="inquiry" class="bg-light py-5">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div id="form-container" class="col-lg-6 text-center">
+                <h2 class="mb-4 brand-font">Project Inquiry</h2>
+                
+                <form id="contactForm" class="text-start mt-5 needs-validation" action="https://formspree.io/f/mdapbvgz" method="POST" novalidate>
+                    
+                    <div class="mb-4">
+                        <input type="text" name="name" class="form-control custom-input" placeholder="Full Name" required>
+                        <div class="invalid-feedback">Please enter your full name.</div>
+                    </div>
+<div class="mb-4">
+    <select name="construction_type" class="form-select custom-input" required>
+        <option value="" selected disabled>Type of Project</option>
+        <option value="New Construction">New Construction</option>
+        <option value="Renovation">Renovation / Remodeling</option>
+        <option value="Interior Design">Interior Design Only</option>
+        <option value="Commercial">Commercial Project</option>
+    </select>
+    <div class="invalid-feedback">Please select a project type.</div>
+</div>           
+
+
+           <div class="mb-4">
+    <label class="uppercase-tracking mb-1 d-block text-muted" style="font-size: 10px;">Contact Number</label>
+    <div class="phone-wrapper d-flex flex-wrap align-items-center"> <div class="d-flex align-items-center w-100">
+            <span class="prefix">+91</span>
+            <input 
+                type="tel" 
+                name="phone" 
+                id="phoneInput"
+                class="form-control phone-input-field" 
+                placeholder="98765 43210" 
+                pattern="[6-9][0-9]{9}" 
+                required
+            >
+        </div>
+
+        <div class="invalid-feedback w-100 mt-2" style="font-size: 11px;">
+            Enter a valid 10-digit mobile number.
+        </div>
+    </div>
+</div>
+
+                    <div class="mb-4">
+                        <input 
+                            type="email" 
+                            name="email" 
+                            class="form-control custom-input" 
+                            placeholder="Email Address" 
+                            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$"
+                            required
+                        >
+                        <div class="invalid-feedback">Please provide a valid email (e.g., name@gmail.com).</div>
+                    </div>
+
+                    <div class="mb-4">
+                        <textarea name="message" class="form-control custom-input" rows="4" placeholder="Briefly describe your dream home..." required></textarea>
+                        <div class="invalid-feedback">Please let us know how we can help.</div>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn btn-dark w-100 py-3 rounded-0 mt-3">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

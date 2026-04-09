@@ -1,0 +1,36 @@
+<section id="calculator" class="py-5 bg-white border-top">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <h2 class="display-6 brand-font">Estimate Your Project</h2>
+                    <p class="text-muted">Get a rough estimate based on your square footage and finish quality.</p>
+                </div>
+                
+                <div class="card border-0 shadow-sm p-4 p-md-5 bg-light">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <label class="uppercase-tracking mb-2 d-block">Total Area (Sq. Ft.)</label>
+                            <input type="number" id="sqftInput" class="form-control form-control-lg rounded-0 border-0 shadow-none mb-4" placeholder="e.g. 1500" min="1">
+                            
+                            <label class="uppercase-tracking mb-2 d-block">Construction Quality</label>
+                            <select id="packageSelect" class="form-select form-select-lg rounded-0 border-0 shadow-none">
+                                <option value="1350">Normal (₹1,350/sq.ft)</option>
+                                <option value="1400" selected>Standard (₹1,400/sq.ft)</option>
+                                <option value="1450">Premium (₹1,450/sq.ft)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-md-6 d-flex flex-column justify-content-center border-start ps-md-5">
+                            <p class="uppercase-tracking text-muted mb-1">Estimated Budget</p>
+                            <h2 class="display-5 fw-bold text-dark mb-0">₹ <span id="totalDisplay">0</span></h2>
+                            <p class="small text-muted mt-2">*Excluding taxes and permit fees.</p>
+                            
+                            <a href="#inquiry" class="btn btn-dark rounded-0 mt-4 py-3 uppercase-tracking w-100">Book Consultation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

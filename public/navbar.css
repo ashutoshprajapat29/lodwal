@@ -1,0 +1,44 @@
+/* --- LUXURY LOGO MARK --- */
+.navbar-brand {
+    line-height: 1;
+    padding: 0;
+}
+
+.logo-main {
+    font-family: var(--heading-font); /* Playfair Display */
+    font-weight: 800;
+    font-size: 1.8rem;
+    letter-spacing: 8px; /* The "Secret Sauce" of luxury branding */
+    color: #1a1a1a;
+    display: block;
+    margin-right: -8px; /* Balances the spacing on the right */
+    transition: all 0.4s ease;
+}
+
+.logo-sub {
+    font-family: var(--primary-font); /* Inter */
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #7a7a7a;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+/* Subtle Hover Effect */
+.navbar-brand:hover .logo-main {
+    letter-spacing: 10px;
+    color: #000;
+}
+
+
+@media (max-width: 768px) {
+    .logo-main {
+        font-size: 1.4rem;
+        letter-spacing: 5px;
+    }
+    .logo-sub {
+        font-size: 7px;
+        letter-spacing: 3px;
+    }
+}
