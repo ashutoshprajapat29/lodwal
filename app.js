@@ -13,6 +13,9 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/terms',(req,res)=>{
+    res.render('terms.ejs');
+})
 
 if (process.env.NODE_ENV !== 'production') {
     app.listen(3000, () => {
