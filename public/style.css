@@ -2,136 +2,145 @@
 :root {
     --primary-font: 'Inter', sans-serif;
     --heading-font: 'Playfair Display', serif;
-    --accent-color: #7a7a7a;
-    --brand-dark: #1a1a1a;
-    --error-red: #dc3545;
-    --success-green: #198754;
+    --brand-dark: #121212;
+    --brand-light: #fdfbf7;
+    --accent-gold: #c5a059;
+    --accent-gold-hover: #b08d4a;
+    --text-muted: #888888;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    
+    --error-red: #d32f2f;
+    --success-green: #388e3c;
 }
 
 body {
     font-family: var(--primary-font);
     color: var(--brand-dark);
-    background-color: #fff;
+    background-color: var(--brand-light);
     scroll-behavior: smooth;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6, .brand-font {
     font-family: var(--heading-font);
+    font-weight: 600;
 }
 
+.bg-dark {
+    background-color: var(--brand-dark) !important;
+}
+.bg-light {
+    background-color: var(--brand-light) !important;
+}
+.text-gold {
+    color: var(--accent-gold) !important;
+}
+
+/* Typography utilities */
 .brand-logo {
-    font-weight: 700;
-    letter-spacing: 4px;
-    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 6px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
 }
 
 .uppercase-tracking {
     text-transform: uppercase;
     font-size: 0.75rem;
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
-/* --- 2. NAVIGATION --- */
-.nav-link {
-    margin: 0 15px;
-    color: var(--brand-dark) !important;
-    transition: opacity 0.3s ease;
+/* Base Buttons */
+.btn-gold {
+    background-color: var(--accent-gold);
+    color: #fff;
+    border: 1px solid var(--accent-gold);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.nav-link:hover {
-    opacity: 0.7;
-}
-
-.btn-contact {
-    border: 1px solid var(--brand-dark);
-    padding: 8px 20px !important;
-    transition: all 0.3s ease;
-}
-
-.btn-contact:hover {
+.btn-gold:hover {
     background-color: var(--brand-dark);
-    color: #fff !important;
+    border-color: var(--brand-dark);
+    color: var(--accent-gold) !important;
 }
 
-/* --- 3. HERO SECTION --- */
-.hero-section {
-    padding: 120px 0 60px 0; /* Mobile-first padding */
+.btn-outline-gold {
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
+    background: transparent;
+    transition: all 0.4s ease;
 }
 
-@media (min-width: 768px) {
-    .hero-section { padding: 160px 0 100px 0; }
+.btn-outline-gold:hover {
+    background-color: var(--accent-gold);
+    color: #fff;
 }
 
-.hero-img-container img {
-    filter: grayscale(100%);
-    transition: 0.8s ease;
+/* Glassmorphism General */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
 }
 
-.hero-img-container:hover img {
-    filter: grayscale(0%);
+.glass-panel-dark {
+    background: rgba(18, 18, 18, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #fff;
 }
 
-/* --- 4. INQUIRY FORM (TOUCH OPTIMIZED) --- */
-#form-container {
-    min-height: 450px;
-    transition: opacity 0.4s ease;
+/* --- 2. FORMS & INPUTS (FLOATING LABELS) --- */
+.custom-form-floating {
+    position: relative;
+    margin-bottom: 2rem;
 }
 
 .custom-input {
-    border: none;
-    border-bottom: 1px solid #ddd;
-    border-radius: 0;
-    padding: 15px 0;
-    background: transparent !important;
-    box-shadow: none !important;
-    font-size: 16px; /* Prevents iOS zoom */
     width: 100%;
-    transition: border-color 0.3s ease;
+    border: none;
+    border-bottom: 1px solid var(--text-muted);
+    background: transparent !important;
+    border-radius: 0;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: var(--brand-dark);
+    box-shadow: none !important;
+    transition: all 0.3s ease;
 }
 
 .custom-input:focus {
-    border-color: var(--brand-dark);
+    border-color: var(--accent-gold);
+    outline: none;
 }
 
-/* Phone Wrapper Logic */
-.phone-wrapper {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 8px;
-    transition: border-color 0.3s ease;
-    display: flex;
-    align-items: center;
+/* Remove background from select arrows to custom style */
+select.custom-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23121212' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0 center !important;
+    background-size: 12px 12px !important;
+    padding-right: 30px !important;
+    cursor: pointer;
 }
 
-.prefix {
-    font-size: 16px;
-    color: var(--brand-dark);
-    padding-right: 10px;
-    font-weight: 400;
-}
-
-.phone-input-field {
-    border: none !important;
-    background: transparent !important;
-    padding: 0 !important;
-    font-size: 16px;
-    box-shadow: none !important;
-    width: 100%;
-}
-
-.phone-wrapper:focus-within {
-    border-color: var(--brand-dark);
-}
-
-/* --- 5. VALIDATION STYLES --- */
+/* Validation */
 .invalid-feedback {
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 10px;
+    font-size: 0.65rem;
     font-weight: 600;
     color: var(--error-red);
+    position: absolute;
+    bottom: -20px;
 }
 
 .was-validated .custom-input:invalid {
@@ -144,75 +153,72 @@ h1, h2, h3, h4 {
     background-image: none !important;
 }
 
-.was-validated .phone-wrapper:has(:invalid) {
-    border-color: var(--error-red) !important;
+/* Phone Wrapper Logic */
+.phone-wrapper {
+    border-bottom: 1px solid var(--text-muted);
+    display: flex;
+    align-items: center;
+    transition: border-color 0.3s ease;
 }
 
-.was-validated .phone-wrapper:has(:valid) {
-    border-color: var(--success-green) !important;
+.phone-wrapper:focus-within {
+    border-color: var(--accent-gold);
 }
 
-/* --- 6. CALCULATOR SPECIFIC --- */
-#sqftInput, #packageSelect {
-    border-bottom: 2px solid #ddd !important;
-    background-color: transparent;
-    padding: 10px 0;
-    font-size: 16px;
+.phone-input-field {
+    border: none !important;
+    background: transparent !important;
+    padding: 10px 0 !important;
+    box-shadow: none !important;
+    flex-grow: 1;
 }
 
-#sqftInput:focus, #packageSelect:focus {
-    border-color: var(--brand-dark) !important;
-    box-shadow: none;
+.phone-prefix {
+    color: var(--text-muted);
+    padding-right: 10px;
+    font-weight: 500;
 }
 
-#totalDisplay {
-    transition: all 0.3s ease;
+/* --- 3. SECTION TITLES --- */
+.section-title {
+    font-size: 2.5rem;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 3rem;
 }
 
-.border-start {
-    border-color: #e0e0e0 !important;
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 40%;
+    width: 20%;
+    height: 2px;
+    background-color: var(--accent-gold);
 }
 
-@media (max-width: 768px) {
-    .border-start {
-        border-left: none !important;
-        border-top: 1px solid #e0e0e0 !important;
-        padding-top: 30px;
-        margin-top: 20px;
-    }
-}
-
-/* --- 7. BUTTONS & ANIMATIONS --- */
+/* --- 4. BUTTONS --- */
 .btn-dark {
+    background-color: var(--brand-dark);
+    color: #fff;
     letter-spacing: 2px;
     padding: 15px !important;
     text-transform: uppercase;
     font-size: 0.8rem;
-    transition: all 0.3s ease;
+    border: none;
+    transition: all 0.4s ease;
 }
 
 .btn-dark:hover {
-    letter-spacing: 3px;
-    background-color: #333;
+    background-color: var(--accent-gold);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-#submitBtn:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-in {
-    animation: fadeInUp 0.6s ease-out forwards;
-}
-
-/* --- 8. FOOTER & SOCIAL --- */
+/* --- 5. SOCIAL & FOOTER --- */
 .social-link {
-    color: #adb5bd;
+    color: var(--text-muted);
     font-size: 1.2rem;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -220,15 +226,11 @@ h1, h2, h3, h4 {
 }
 
 .social-link:hover {
-    color: var(--brand-dark);
+    color: var(--accent-gold);
     transform: translateY(-3px);
 }
 
-.gap-4 {
-    gap: 1.5rem !important;
-}
-
-/* --- 9. WHATSAPP FLOATING BUTTON --- */
+/* Whatsapp Floating */
 .whatsapp-btn {
     position: fixed;
     bottom: 30px;
@@ -258,56 +260,3 @@ h1, h2, h3, h4 {
 .whatsapp-btn:hover .whatsapp-text {
     max-width: 200px;
 }
-
-@media (max-width: 576px) {
-    .whatsapp-btn {
-        bottom: 20px;
-        right: 20px;
-        padding: 10px 15px;
-    }
-}
-
-
-select.custom-input {
-    appearance: none; 
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
-    background-repeat: no-repeat !important;
-    background-position: right 0 center !important;
-    background-size: 12px 12px !important;
-    cursor: pointer;
-    color: #1a1a1a;
-    
-    /* ADD THESE TWO LINES */
-    padding-right: 30px !important; /* Prevents text from hitting the arrow */
-    background-color: transparent !important; 
-}
-
-.was-validated select.custom-input:valid {
-    border-color: #198754 !important;
-}
-
-
-/* 1. Fix for the placeholder color in dropdown (keeps it grey until selected) */
-select.custom-input:invalid {
-    color: var(--accent-color); 
-}
-
-/* 2. Fix for Phone Error Alignment (Ensures error message drops to a new line) */
-.phone-wrapper {
-    flex-wrap: wrap; /* Allows error to drop below prefix/input */
-}
-
-.phone-wrapper .invalid-feedback {
-    flex-basis: 100%;
-}
-
-/* 3. Smooth Vertical Alignment for Prefix */
-.prefix {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-
-
-

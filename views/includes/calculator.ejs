@@ -1,36 +1,58 @@
-<section id="calculator" class="py-5 bg-white border-top">
+<section id="calculator" class="py-5" style="background-color: var(--brand-dark); color: white;">
     <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="text-center mb-5">
-                    <h2 class="display-6 brand-font">Estimate Your Project</h2>
-                    <p class="text-muted">Get a rough estimate based on your square footage and finish quality.</p>
-                </div>
-                
-                <div class="card border-0 shadow-sm p-4 p-md-5 bg-light">
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <label class="uppercase-tracking mb-2 d-block">Total Area (Sq. Ft.)</label>
-                            <input type="number" id="sqftInput" class="form-control form-control-lg rounded-0 border-0 shadow-none mb-4" placeholder="e.g. 1500" min="1">
-                            
-                            <label class="uppercase-tracking mb-2 d-block">Construction Quality</label>
-                            <select id="packageSelect" class="form-select form-select-lg rounded-0 border-0 shadow-none">
-                                <option value="1350">Normal (₹1,350/sq.ft)</option>
-                                <option value="1400" selected>Standard (₹1,400/sq.ft)</option>
-                                <option value="1450">Premium (₹1,450/sq.ft)</option>
-                            </select>
-                        </div>
+        <div class="row align-items-center">
+            
+            <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+                <h2 class="display-5 brand-font text-white mb-4">Project Estimator</h2>
+                <p class="text-light opacity-75 mb-4">
+                    Transparency is the foundation of every successful build. Use our estimator to get an approximate baseline for your upcoming project before scheduling a consultation.
+                </p>
+                <ul class="list-unstyled d-flex flex-column gap-2 text-gold">
+                    <li><i class="bi bi-arrow-right me-2"></i> Immediate calculations</li>
+                    <li><i class="bi bi-arrow-right me-2"></i> Based on premium materials</li>
+                    <li><i class="bi bi-arrow-right me-2"></i> No hidden fees</li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-6 offset-lg-1" data-aos="fade-left" data-aos-delay="150">
+                <div class="glass-panel-dark p-4 p-md-5 rounded-3">
+                    <div class="mb-4">
+                        <label class="uppercase-tracking text-gold mb-2 d-block">Total Square Footage</label>
+                        <input type="number" id="sqftInput" class="form-control form-control-lg rounded-0 border-0 border-bottom border-secondary bg-transparent text-white shadow-none px-0" placeholder="e.g. 2000" min="1" style="font-size: 1.5rem;">
+                    </div>
+                    
+                    <div class="mb-5">
+                        <label class="uppercase-tracking text-gold mb-2 d-block">Finish Quality</label>
+                        <select id="packageSelect" class="form-select form-select-lg rounded-0 border-0 border-bottom border-secondary bg-transparent text-white shadow-none px-0 custom-select-dark" style="font-size: 1.2rem;">
+                            <option class="text-dark bg-white" value="1350">Normal (₹1,350/sq.ft)</option>
+                            <option class="text-dark bg-white" value="1400" selected>Standard (₹1,400/sq.ft)</option>
+                            <option class="text-dark bg-white" value="1450">Premium (₹1,450/sq.ft)</option>
+                            <option class="text-dark bg-white" value="1800">Ultra-Luxury (₹1,800/sq.ft)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="pt-4 border-top border-secondary">
+                        <p class="uppercase-tracking text-white-50 mb-1">Estimated Barebone Budget</p>
+                        <h2 class="display-4 fw-bold text-gold mb-0">₹ <span id="totalDisplay">0</span></h2>
+                        <p class="small text-white-50 mt-2">*Inclusive of primary structure and base finishes.</p>
                         
-                        <div class="col-md-6 d-flex flex-column justify-content-center border-start ps-md-5">
-                            <p class="uppercase-tracking text-muted mb-1">Estimated Budget</p>
-                            <h2 class="display-5 fw-bold text-dark mb-0">₹ <span id="totalDisplay">0</span></h2>
-                            <p class="small text-muted mt-2">*Excluding taxes and permit fees.</p>
-                            
-                            <a href="#inquiry" class="btn btn-dark rounded-0 mt-4 py-3 uppercase-tracking w-100">Book Consultation</a>
-                        </div>
+                        <a href="#inquiry" class="btn btn-gold w-100 rounded-0 mt-4 py-3 uppercase-tracking">Discuss Specifics</a>
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
 </section>
+
+<style>
+/* Adjust select arrow for dark mode */
+.custom-select-dark {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0 center !important;
+    background-size: 12px 12px !important;
+    cursor: pointer;
+}
+</style>

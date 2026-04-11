@@ -1,25 +1,57 @@
- <section id="portfolio" class="py-5">
-        <div class="container py-5">
-            <h2 class="section-title mb-5"><b>Selected Works</b></h2>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="project-card">
-                        <img src="/images/image2.png" class="img-fluid" alt="Modern Villa">
-                      
+<section id="portfolio" class="py-5 bg-light">
+    <div class="container py-5">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title">Selected Works</h2>
+            <p class="text-muted mt-3 mx-auto" style="max-width: 600px;">A curation of our finest architectural accomplishments.</p>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Project 1 -->
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="position-relative overflow-hidden group-hover-zoom">
+                    <div class="ratio ratio-4x3">
+                        <img src="/images/image2.png" class="object-fit-cover w-100 h-100 transition-transform zoom-img" alt="Modern Villa">
+                    </div>
+                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 opacity-0 overlay-transition d-flex flex-column justify-content-end p-4 text-white text-decoration-none project-overlay">
+                        <p class="uppercase-tracking text-gold mb-1">Residential</p>
+                        <h4 class="brand-font mb-0">The Modern Villa</h4>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="project-card">
-                        <img src="/images/image1.png" class="img-fluid" alt="Heritage Home">
-
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="position-relative overflow-hidden group-hover-zoom">
+                    <div class="ratio ratio-4x3">
+                        <img src="/images/image1.png" class="object-fit-cover w-100 h-100 transition-transform zoom-img" alt="Heritage Home">
+                    </div>
+                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 opacity-0 overlay-transition d-flex flex-column justify-content-end p-4 text-white text-decoration-none project-overlay">
+                        <p class="uppercase-tracking text-gold mb-1">Renovation</p>
+                        <h4 class="brand-font mb-0">Heritage Revival Home</h4>
                     </div>
                 </div>
-                 <div class="col-md-6">
-                    <div class="project-card">
-                        <img src="/images/image4.png" class="img-fluid" alt="Heritage Home">
-                        
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="col-md-12" data-aos="fade-up" data-aos-delay="300">
+                <div class="position-relative overflow-hidden group-hover-zoom">
+                    <div class="ratio ratio-16x9 ratio-md-21x9">
+                        <img src="/images/image4.png" class="object-fit-cover w-100 h-100 transition-transform zoom-img" alt="Commercial Space">
+                    </div>
+                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 opacity-0 overlay-transition d-flex flex-column justify-content-end p-4 p-md-5 text-white text-decoration-none project-overlay">
+                        <p class="uppercase-tracking text-gold mb-1">Commercial</p>
+                        <h4 class="brand-font h2 mb-0">Luxury Office Complex</h4>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Need to add this css logic inline or to style.css for hovers -->
+<style>
+    .group-hover-zoom .zoom-img { transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .group-hover-zoom:hover .zoom-img { transform: scale(1.05); }
+    .overlay-transition { transition: opacity 0.4s ease; opacity: 0; }
+    .group-hover-zoom:hover .overlay-transition { opacity: 1; }
+</style>

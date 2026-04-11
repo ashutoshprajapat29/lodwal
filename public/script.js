@@ -1,14 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Lodwal Construction Script: Fully Loaded");
 
+    // --- Initialize AOS ---
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    }
+
     // --- 1. NAVBAR SCROLL EFFECT ---
     const navbar = document.querySelector('.navbar');
     if (navbar) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                navbar.classList.add('shadow-sm');
+                navbar.classList.add('scrolled');
+                navbar.classList.remove('navbar-dark');
             } else {
-                navbar.classList.remove('shadow-sm');
+                navbar.classList.remove('scrolled');
+                navbar.classList.add('navbar-dark');
             }
         });
     }
