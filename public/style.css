@@ -230,12 +230,10 @@ select.custom-input {
     transform: translateY(-3px);
 }
 
-/* Whatsapp Floating */
-.whatsapp-btn {
+/* --- Floating Action Buttons --- */
+.floating-btn {
     position: fixed;
-    bottom: 30px;
     right: 30px;
-    background: #25D366;
     padding: 12px 20px;
     border-radius: 50px;
     display: flex;
@@ -246,7 +244,7 @@ select.custom-input {
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
-.whatsapp-text {
+.floating-text {
     color: white;
     font-weight: 600;
     font-size: 14px;
@@ -257,6 +255,62 @@ select.custom-input {
     transition: max-width 0.5s ease;
 }
 
-.whatsapp-btn:hover .whatsapp-text {
+.floating-btn:hover .floating-text {
     max-width: 200px;
+}
+
+.whatsapp-btn {
+    bottom: 30px;
+    background: #25D366;
+}
+
+.call-btn {
+    bottom: 90px;
+    background: var(--brand-dark);
+    border: 1px solid var(--accent-gold);
+}
+
+/* --- MOBILE OPTIMIZATIONS --- */
+@media (max-width: 768px) {
+    /* Adjust Hero Text */
+    .hero-section .display-2 {
+        font-size: 3.5rem; /* slightly smaller on tablets/phones */
+    }
+    
+    /* Adjust Section Title */
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    /* Ensure padding is optimal */
+    .py-5 {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+    .p-md-5 {
+        padding: 1.5rem !important; /* reduce inner card padding */
+    }
+
+    /* Floating Buttons Mobile Adjustments */
+    .floating-btn {
+        padding: 10px 15px; /* smaller padding */
+    }
+    .whatsapp-btn {
+        bottom: 20px;
+        right: 20px;
+    }
+    .call-btn {
+        bottom: 75px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section .display-2 {
+        font-size: 2.8rem; /* even smaller on tight phones */
+    }
+    .btn-lg {
+        padding: 12px 20px !important;
+        font-size: 0.9rem;
+    }
 }
